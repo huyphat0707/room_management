@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const path = require('path');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,8 +12,17 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js('resources/js/app.js', 'public/js').vue()
     .postCss('resources/css/app.css', 'public/css', [
         require("tailwindcss"),
     ])
     .copy('node_modules/admin-lte/dist/img', 'public/dist/img');
+
+mix.alias({
+    '@config': path.resolve(__dirname, 'resources/js/src/config'),
+    '@components': path.resolve(__dirname, 'resources/js/src/components'),
+    '@container': path.resolve(__dirname, 'resources/js/src/container'),
+    '@helper': path.resolve(__dirname, 'resources/js/src/helper'),
+    '@layouts': path.resolve(__dirname, 'resources/js/src/layouts'),
+    '@src': path.resolve(__dirname, 'resources/js/src'),
+});

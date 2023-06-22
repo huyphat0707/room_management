@@ -13,9 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/admin', function () {
-    return view('admin');
-});
 Route::get('/', function () {
     return view('welcome');
+});
+
+
+/*
+ * Backend Routes
+ * Namespaces indicate folder structure
+ */
+Route::group([
+    'as' => 'pages.', 
+    // 'middleware' => ['auth']
+], function () {
+    include_route_files(__DIR__ . '/Pages/');
+});
+
+/*
+ * Api Routes
+ * Namespaces indicate folder structure
+ */
+Route::group([
+    'prefix'     => 'api',
+    'as'         => 'api.',
+    // 'middleware' => 'auth',
+], function () {
+    include_route_files(__DIR__ . '/Api/');
 });
