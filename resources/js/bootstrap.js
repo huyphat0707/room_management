@@ -1,6 +1,4 @@
 window._ = require('lodash');
-require('admin-lte');
-require('admin-lte/dist/js/adminlte.js');
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

@@ -33,10 +33,10 @@ Route::group([
  * Api Routes
  * Namespaces indicate folder structure
  */
-Route::group([
-    'prefix'     => 'api',
-    'as'         => 'api.',
-    // 'middleware' => 'auth',
-], function () {
-    include_route_files(__DIR__ . '/Api/');
-});
+// Route::group([
+//     'prefix'     => 'api',
+//     'as'         => 'api.',
+//     // 'middleware' => 'auth',
+// ], function () {
+//     include_route_files(__DIR__ . '/Api/');
+// });

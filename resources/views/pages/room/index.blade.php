@@ -1,6 +1,5 @@
-<title>test</title>
+<title>Quản lý phòng</title>
 
 <x-app-layout>
-    testtt
     <room-index />
 </x-app-layout>
